@@ -11,7 +11,7 @@ const Header = () => {
         <Button disabled startIcon={<InfoOutlinedIcon/>} style={{color:'#5e6cff',paddingTop:'15px'}}>
           Learn more
         </Button>
-        <Button variant='outlined' style={{borderRadius:'0px',borderWidth:'0px',color:'black',boxShadow:'1px 2px 9px #b8bab9',marginLeft:'65%'}} startIcon={<AddOutlinedIcon/>}>
+        <Button variant='outlined' style={{borderRadius:'0px',borderWidth:'0px',color:'black',boxShadow:'1px 2px 9px #b8bab9',marginLeft:'auto'}} startIcon={<AddOutlinedIcon/>}>
           Virtual Card
         </Button>
     </Box>
