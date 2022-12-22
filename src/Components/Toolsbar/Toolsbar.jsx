@@ -5,10 +5,13 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import MenuIcon from '@mui/icons-material/Menu';
 import Search from '../Search/Search';
-
+import {selectCardCategory} from '../../App/Toolslice.js';
+import { useDispatch } from 'react-redux';
 const Toolsbar = () => {
   const [value,setValue] = useState(1);
+  const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
+    dispatch(selectCardCategory(newValue));
     setValue(newValue);
   };
   return (
