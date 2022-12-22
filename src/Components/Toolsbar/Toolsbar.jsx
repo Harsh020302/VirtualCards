@@ -6,17 +6,26 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import MenuIcon from '@mui/icons-material/Menu';
 import Search from '../Search/Search';
 import {selectCardCategory} from '../../App/Toolslice.js';
+import Filtercomp from '../FilterComp/Filtercomp';
 import { useDispatch } from 'react-redux';
+
 const Toolsbar = () => {
   const [value,setValue] = useState(1);
   const dispatch = useDispatch();
+  const [showFilterComp,setShowFilterComp] = useState(false);
   const handleChange = (event, newValue) => {
     dispatch(selectCardCategory(newValue));
     setValue(newValue);
   };
+  const handleClick = () => {
+    console.log(showFilterComp);
+    setShowFilterComp((prev)=>{
+      return !prev;
+    })
+  };
   return (
-    <div>
-      <Toolbar>
+    <div >
+      <Toolbar >
       <Box sx={{}}>
         <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
           <Tab component={Link} label="Your" to="/your" />
@@ -30,10 +39,11 @@ const Toolsbar = () => {
       </Toolbar>
       <Divider sx={{width:'95%',margin:'auto',position:'relative',bottom:'8px'}}/>
       <Box sx={{display:'flex',flexDirection:'row-reverse'}} >
-        <Button sx={{height:'30px',marginTop:'18px',marginRight:'25px',marginLeft:'20px',color:'GrayText',backgroundColor:'#f7f4f3',borderWidth:'0px'}} variant='outlined' startIcon={<FilterListIcon />} size='small' >
+        <Button onClick={handleClick} sx={{height:'30px',marginTop:'18px',marginRight:'25px',marginLeft:'20px',color:'GrayText',backgroundColor:'#f7f4f3',borderWidth:'0px'}} variant='outlined' startIcon={<FilterListIcon />} size='small' >
           Filter
         </Button>
         <Search />
+        { showFilterComp && <Filtercomp /> }
       </Box>
     </div>
   )
