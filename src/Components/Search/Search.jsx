@@ -1,12 +1,15 @@
 import React,{useState} from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+import { useDispatch } from 'react-redux';
+import { selectSearchQuery } from '../../App/Toolslice';
 
 const Search = () => {
-    
+    const dispatch = useDispatch();
     const [query,setQuery] = useState('');
     const handleKeyPress = (e)=>{
         if(e.key === 'Enter'){
+            dispatch(selectSearchQuery(query));
             console.log(query);
         }
     };

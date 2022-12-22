@@ -27,7 +27,7 @@ const Card = ({item}) => {
 
             <Box sx={{backgroundColor:'#FEF1F4' ,borderStyle:'solid',borderColor:'black',borderRadius:'50%',borderWidth:'0px',width:'40px',padding:'5px',boxShadow:'1px 2px 9px #b8bab9',marginLeft:'auto'}}>
                 {
-                    isSubscriptionCard === 'Subscription' ? <LocalFireDepartmentIcon style={{color:'#FF4973',fontSize:'40px'}}/> : <WifiProtectedSetupIcon style={{color:'#FF4973',fontSize:'40px'}}/>
+                    isSubscriptionCard === 'Subscription' ?  <WifiProtectedSetupIcon style={{color:'#FF4973',fontSize:'40px'}}/> : <LocalFireDepartmentIcon style={{color:'#FF4973',fontSize:'40px'}}/>
                 }
     
             </Box>
