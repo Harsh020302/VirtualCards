@@ -2,7 +2,7 @@ import React from 'react';
 import { Route , Routes } from 'react-router-dom';
 
 import Header from './Header/Header.jsx';
-import Toolsbar from './ToolsBar/Toolsbar.jsx';
+import Toolsbar from './Toolsbar/Toolsbar.jsx';
 import CardsLayout from './CardsLayout/CardsLayout.jsx';
 
 import './App.css';
