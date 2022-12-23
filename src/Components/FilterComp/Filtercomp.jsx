@@ -1,9 +1,13 @@
 import React,{useState} from 'react'
-import { Box,Divider,Typography,FormControl,FormGroup,FormControlLabel,Checkbox,Select,MenuItem,InputLabel,Button} from '@mui/material';
 import { useDispatch } from 'react-redux';
+
+import { Box,Divider,Typography,FormControl,FormGroup,FormControlLabel,Checkbox,Select,MenuItem,InputLabel,Button} from '@mui/material';
+
 import { selectfilterBy } from '../../App/Toolslice';
+import './style.css'
 
 const Filtercomp = ({ closeFilter }) => {
+    
     const dispatch = useDispatch();
     const [state,setState] = useState({
         burner: false,
@@ -38,9 +42,12 @@ const Filtercomp = ({ closeFilter }) => {
     
   return (
     <div>
-        <Box sx={{padding:'10px',backgroundColor:'white',position:'absolute',right:'50px',top:'230px',borderStyle:'solid',borderColor:'#BDBBBA',borderRadius:'5px',borderWidth:'2px',boxShadow:'1px 2px 9px #b8bab9'}}>
+        <Box className='container' >
+
             <Typography sx={{textAlign:'left',margin:'5px',fontSize:'15px'}}>Filters</Typography>
+
             <Divider sx={{marginBottom:'5px'}}/>
+            
             <FormControl component="fieldset" variant="standard">
             
                 <InputLabel  id="select">Card Holder</InputLabel>
@@ -85,8 +92,11 @@ const Filtercomp = ({ closeFilter }) => {
             </FormControl>
 
             <Box>
+
                 <Button sx={{margin:'10px',backgroundColor:'#FF4973'}} variant='contained' size='small' onClick={handleApplyClick}>Apply Changes</Button>
+
                 <Button sx={{margin:'10px',boxShadow:'1px 2px 6px #b8bab9'}} variant='text' size='small' onClick={handleClearClick}>Clear</Button>
+
             </Box>
 
         </Box>

@@ -1,18 +1,23 @@
 import React,{useState} from 'react';
+import { useDispatch } from 'react-redux';
+
 import { TextField, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
-import { useDispatch } from 'react-redux';
+
 import { selectSearchQuery } from '../../App/Toolslice';
 
 const Search = () => {
+
     const dispatch = useDispatch();
     const [query,setQuery] = useState('');
+
     const handleKeyPress = (e)=>{
         if(e.key === 'Enter'){
             dispatch(selectSearchQuery(query));
             console.log(query);
         }
     };
+
   return (
     <div>
         <TextField
@@ -28,6 +33,7 @@ const Search = () => {
                     </InputAdornment>
                 ),
             }}
+            
             sx={{width:'130px',margin:'15px'}}
         />
     </div>
