@@ -6,7 +6,8 @@ Virtual Cards is a single page application built using React.js.The API for the 
 
 ## Instructions to setup in your local machine after the git pull
 
-In the root directory use following steps
+In the root directory use following steps.
+
 1   Install the node modules using the following command
             `npm install`
 
