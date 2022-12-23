@@ -4,9 +4,13 @@ import Card from '../Card/Card';
 import {Box,CircularProgress} from '@mui/material';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+
 const page_num = 1;
 const styles = {
-  display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly'
+  display:'flex',
+  flexDirection:'row',
+  flexWrap:'wrap',
+  justifyContent:'space-evenly'
 }
 const CardsLayout = () => {
 
@@ -16,6 +20,7 @@ const CardsLayout = () => {
   const { cardCategory,searchQuery,filterBy } = useSelector((state)=>state.currentQuery);
   
   useEffect(()=>{
+
     setTimeout(async () => {
       const response = await axios.get(
           `https://65041edd-15a4-45fb-b002-c1f4b53422d9.mock.pstmn.io/${cardCategory}?page=${page}`
@@ -24,6 +29,7 @@ const CardsLayout = () => {
       setFinalData((prev) =>[...response.data.data]);
       setLoading(false);
     }, 100);
+
   },[cardCategory])
 
   useEffect(()=>{
@@ -160,20 +166,23 @@ const CardsLayout = () => {
   //display without Filter or Search
 
   return (
-    
-    <div style={styles}>
+    <div>
+      <div style={styles}>
 
-        { finaldata.length !== 0 ? (finaldata.map((item)=>{
-            return <Card item={item} />
+          { finaldata.length !== 0 ? (finaldata.map((item)=>{
+              return <Card item={item} />
 
-          })) : (
-            
-             <CircularProgress sx={{margin:'50px'}}/>
+            })) : (
+              
+              <CircularProgress sx={{margin:'50px'}}/>
 
-          )
-        }
+            )
+          }
+      </div>
+      <div>
+       {loading && <CircularProgress/> }
+      </div>
     </div>
-     
   )
   
 }
