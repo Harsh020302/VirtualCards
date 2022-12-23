@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import Card from '../Card/Card';
+import Card from '../Card/Card.jsx';
 
 import {Box,CircularProgress} from '@mui/material';
 import { useSelector } from 'react-redux';

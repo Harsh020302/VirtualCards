@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { Box,Divider,Typography,FormControl,FormGroup,FormControlLabel,Checkbox,Select,MenuItem,InputLabel,Button} from '@mui/material';
 
-import { selectfilterBy } from '../../App/Toolslice';
+import { selectfilterBy } from '../../App/Toolslice.js';
 import './style.css'
 
 const Filtercomp = ({ closeFilter }) => {

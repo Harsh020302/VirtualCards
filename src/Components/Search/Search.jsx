@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { TextField, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-import { selectSearchQuery } from '../../App/Toolslice';
+import { selectSearchQuery } from '../../App/Toolslice.js';
 
 const Search = () => {
 

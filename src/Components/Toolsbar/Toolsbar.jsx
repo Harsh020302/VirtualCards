@@ -6,10 +6,10 @@ import {Tabs,Tab,Box,Toolbar,Button,Divider} from '@mui/material';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import MenuIcon from '@mui/icons-material/Menu';
-import Search from '../Search/Search';
+import Search from '../Search/Search.jsx';
 
 import {selectCardCategory} from '../../App/Toolslice.js';
-import Filtercomp from '../FilterComp/Filtercomp';
+import Filtercomp from '../FilterComp/Filtercomp.jsx';
 
 const styles = {
 
