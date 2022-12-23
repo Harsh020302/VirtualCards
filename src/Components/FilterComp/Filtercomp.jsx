@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import { Box,Divider,Typography,FormControl,FormGroup,FormControlLabel,Checkbox,Select,MenuItem,InputLabel,Button} from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { selectfilterBy } from '../../App/Toolslice';
 
-
-const Filtercomp = () => {
+const Filtercomp = ({ closeFilter }) => {
+    const dispatch = useDispatch();
     const [state,setState] = useState({
         burner: false,
         subscription: false,
@@ -20,6 +22,17 @@ const Filtercomp = () => {
             burner: false,
             subscription: false,
             cardHolderName: ''
+        })
+    }
+    const handleApplyClick = () =>{
+        dispatch(selectfilterBy(state));
+        setState({
+            burner: false,
+            subscription: false,
+            cardHolderName: ''
+        })
+        closeFilter((prev)=>{
+            return !prev;
         })
     }
     
@@ -72,7 +85,7 @@ const Filtercomp = () => {
             </FormControl>
 
             <Box>
-                <Button sx={{margin:'10px',backgroundColor:'#FF4973'}} variant='contained' size='small'>Apply Changes</Button>
+                <Button sx={{margin:'10px',backgroundColor:'#FF4973'}} variant='contained' size='small' onClick={handleApplyClick}>Apply Changes</Button>
                 <Button sx={{margin:'10px',boxShadow:'1px 2px 6px #b8bab9'}} variant='text' size='small' onClick={handleClearClick}>Clear</Button>
             </Box>
 

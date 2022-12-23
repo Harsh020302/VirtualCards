@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     cardCategory: 'all',
     searchQuery: '',
-    filterBy: '',
+    filterBy: {},
 };
 
 const toolSlice = createSlice({
@@ -14,23 +14,23 @@ const toolSlice = createSlice({
             if(action.payload === 0){
                 state.cardCategory = 'your';
                 state.searchQuery = '';
-                state.filterBy = '';
+                state.filterBy = {};
             }
             else if(action.payload===1){
                 state.cardCategory = 'all';
                 state.searchQuery = '';
-                state.filterBy = '';
+                state.filterBy = {};
             }
             else{
                 state.cardCategory = 'blocked';
                 state.searchQuery = '';
-                state.filterBy = '';
+                state.filterBy = {};
             }
         },
         selectSearchQuery : (state,action)=>{
             state.searchQuery = action.payload;
             state.cardCategory = '';
-            state.filterBy = '';
+            state.filterBy = {};
         },
         selectfilterBy : (state,action)=>{
             state.filterBy = action.payload;

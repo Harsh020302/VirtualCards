@@ -17,7 +17,7 @@ const Card = ({item}) => {
 
                 <span style={{display:'block',fontWeight:'Bold',fontSize:'22px',textAlign:'left'}}>{item.name}</span>
                 
-                <span style={{color:'#BDBBBA',fontSize:'15px'}}>Owner Name</span>
+                <span style={{color:'#BDBBBA',fontSize:'15px'}}>{item.owner_name}</span>
 
                 <FiberManualRecordIcon style={{color:'#BDBBBA',fontSize:'10px',marginLeft:'10px',marginRight:'10px'}}/>
 

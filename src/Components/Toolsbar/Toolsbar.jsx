@@ -18,7 +18,6 @@ const Toolsbar = () => {
     setValue(newValue);
   };
   const handleClick = () => {
-    console.log(showFilterComp);
     setShowFilterComp((prev)=>{
       return !prev;
     })
@@ -43,7 +42,7 @@ const Toolsbar = () => {
           Filter
         </Button>
         <Search />
-        { showFilterComp && <Filtercomp /> }
+        { showFilterComp && <Filtercomp closeFilter={setShowFilterComp} /> }
       </Box>
     </div>
   )
